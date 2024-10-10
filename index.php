@@ -15,7 +15,9 @@
 <body>
 
     <header class="bg-secondary p-4">
+
         <h1 class="text-center"><a href=".">BLOG IPSSI</a></h1>
+
         <div class="text-end">
             <a href="ajouter.php" class="text-light">Administration</a>
         </div>

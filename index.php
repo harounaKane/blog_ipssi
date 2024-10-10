@@ -1,3 +1,9 @@
+<?php
+    $connect = mysqli_connect("localhost", "root", "", "blog");
+
+    $query = mysqli_query($connect, "SELECT * FROM article");
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,27 +22,16 @@
     </header>
     <main class="container-fluid">
         <h1 class="text-center">Liste article</h1>
-        <h3 class="text-success">
-            <a href="article.php">PHP</a>
-        </h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto molestiae dolores a, accusantium laborum possimus quam error dolorem ea!
-        </p>
-        <div>
-            Créé par Toto le 10/10/2024
-        </div>
 
-        <hr>
+        <?php while($article = $query->fetch_assoc()): ?>
+            <h3 class="text-success">
+                <a href="article.php?id=<?= $article['id'] ?>"><?= $article['titre'] ?></a>
+            </h3>
+            <p><?= $article['contenu'] ?></p>
+            <div><?= $article['datecreation'] ?> </div>
 
-        <h3 class="text-success">
-            <a href="article.php">JS</a>
-        </h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto molestiae dolores a, accusantium laborum possimus quam error dolorem ea!
-        </p>
-        <div>
-            Créé par Tata le 05/10/2024
-        </div> 
+            <hr>
+        <?php endwhile; ?>
     </main>
 
     <footer class="text-center bg-secondary p-4 mt-5">

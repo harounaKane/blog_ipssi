@@ -1,3 +1,15 @@
+<?php
+    $connect = mysqli_connect("localhost", "root", "", "blog");
+
+    if( isset($_POST['article'])){
+        extract($_POST);
+        $query = "INSERT INTO article VALUES(NULL, '$article', '$contenu', Now())";
+
+        mysqli_query($connect, $query);
+        header("location: .");
+        exit;       
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

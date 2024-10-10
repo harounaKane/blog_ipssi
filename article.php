@@ -1,3 +1,12 @@
+<?php
+    $connect = mysqli_connect("localhost", "root", "", "blog");
+    
+    $query = mysqli_query($connect, "SELECT * FROM article WHERE id = ".$_GET['id']);
+
+    $art = mysqli_fetch_assoc($query);
+
+    $queryCommentByArt = mysqli_query($connect, "SELECT * FROM comment WHERE id_article = " . $art['id']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,26 +24,22 @@
         </div>
     </header>
     <main class="container-fluid">
-        <h1 class="text-center">Articel ...</h1>
+        <h1 class="text-center">Articel <?= $art['titre'] ?></h1>
         <h2 class="text-success">
-            <a href="article.php">PHP</a>
+            <a href="article.php"><?= $art['titre'] ?></a>
         </h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto molestiae dolores a, accusantium laborum possimus quam error dolorem ea!
-        </p>
-        <div>
-            Créé par Toto le 10/10/2024
-        </div>
+        <p><?= $art['contenu'] ?> </p>
+        <div>Créé le <?= $art['datecreation'] ?> </div>
 
         <hr>
 
-        <div>Tutu</div>
-        <p style="width: 50%;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores cupiditate sed hic consequuntur nemo odio explicabo eveniet distinctio reprehenderit!
-        </p>
-        <p>le ...</p>
+        <?php while($comment = $queryCommentByArt->fetch_assoc()): ?>
+       
+        <p style="width: 50%;"><?= $comment['contenu'] ?> </p>
+        <p>le <?= $comment['datecomment'] ?></p>
 
         <hr>
+        <?php endwhile; ?>
 
         <form action="" method="POST">
             <div class="form-group">

@@ -9,16 +9,16 @@
 <body>
 
     <header class="bg-secondary p-4">
-        <h1 class="text-center"><a href=".">BLOG</a></h1>
+    <h1 class="text-center"><a href=".">BLOG</a></h1>
         <div class="text-end">
             <a href="ajouter.php" class="text-light">Administration</a>
         </div>
     </header>
     <main class="container-fluid">
-        <h1 class="text-center">Liste article</h1>
-        <h3 class="text-success">
+        <h1 class="text-center">Articel ...</h1>
+        <h2 class="text-success">
             <a href="article.php">PHP</a>
-        </h3>
+        </h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto molestiae dolores a, accusantium laborum possimus quam error dolorem ea!
         </p>
@@ -28,15 +28,28 @@
 
         <hr>
 
-        <h3 class="text-success">
-            <a href="article.php">JS</a>
-        </h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iusto molestiae dolores a, accusantium laborum possimus quam error dolorem ea!
+        <div>Tutu</div>
+        <p style="width: 50%;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolores cupiditate sed hic consequuntur nemo odio explicabo eveniet distinctio reprehenderit!
         </p>
-        <div>
-            Créé par Tata le 05/10/2024
-        </div> 
+        <p>le ...</p>
+
+        <hr>
+
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="">Pseudo</label>
+                <input type="text" name="pseudo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Contenu</label>
+                <textarea name="contenu" class="form-control"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-success mt-3">
+        </form>
+
+        
     </main>
 
     <footer class="text-center bg-secondary p-4 mt-5">

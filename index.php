@@ -37,7 +37,7 @@
     </main>
 
     <footer class="text-center bg-secondary p-4 mt-5">
-        BLOG - IPSSI
+        &copy; - BLOG - IPSSI
     </footer>
     
 </body>
